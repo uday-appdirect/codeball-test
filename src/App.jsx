@@ -8,7 +8,10 @@ function App() {
 
   return (
     <>
-<div>hello world</div>
+      <div>
+        <h1>Hello world</h1>
+        <p>this is a p tag</p>
+      </div>
     </>
   )
 }
