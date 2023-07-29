@@ -7,7 +7,7 @@ const App = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false)
   const [text, setText] = useState([])
-  const API_KEY = 'S8FOJA98XFQ7INS3VYC5LFQE2PJ60OH1J7Q0BITZ4IC981Z9CUPPT86OTJ43XLF61JXU3AY27MZS0CDI'
+  const API_KEY = 'RHWM6PKOP4TFG4XM9MQHH6I6XJN7SE913UFDKZE613MDRRPSDVUHTFAQ2FRHNOXJX0B9TUSK79U1EE72'
 
   const getSearchResults = async (searchQuery) => {
     let config = {
@@ -51,7 +51,6 @@ const App = () => {
     }
     setIsLoading(false);
   };
-  console.log(text)
   return (
     <div className="container">
       <div className="search-bar">
