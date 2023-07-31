@@ -33,6 +33,7 @@ const App = () => {
   }
 
   const cool = 'cool';
+  console.log('un sasdf,sfsf')
 
   const handleSearch = async () => {
     setIsLoading(true);
