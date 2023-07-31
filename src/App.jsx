@@ -21,7 +21,7 @@ const App = () => {
     return response;
   }
 
-  const getText = (url) => {
+  const getText = async (url) => {
     let config = {
       method: 'get',
       maxBodyLength: Infinity,
@@ -31,9 +31,6 @@ const App = () => {
     const response = await axios.request(config)
     return response;
   }
-
-  const cool = 'cool';
-  console.log('un sasdf,sfsf')
 
   const handleSearch = async () => {
     setIsLoading(true);
