@@ -21,7 +21,7 @@ const App = () => {
     return response;
   }
 
-  const getText = async (url) => {
+  const getText = (url) => {
     let config = {
       method: 'get',
       maxBodyLength: Infinity,
