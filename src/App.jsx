@@ -43,8 +43,6 @@ const App = () => {
         textArr.push(res.data.text)
       }
 
-      setText(textArr)
-
     } catch (error) {
       console.error('Error fetching search results:', error);
       setSearchResults([]);
