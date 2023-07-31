@@ -32,6 +32,8 @@ const App = () => {
     return response;
   }
 
+  const cool = 'cool';
+
   const handleSearch = async () => {
     setIsLoading(true);
     try {
