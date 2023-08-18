@@ -6,7 +6,7 @@ const App = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false)
-  // const [text, setText] = useState([])
+  const [text, setText] = useState([])
   const API_KEY = 'RHWM6PKOP4TFG4XM9MQHH6I6XJN7SE913UFDKZE613MDRRPSDVUHTFAQ2FRHNOXJX0B9TUSK79U1EE72'
 
   const getSearchResults = async (searchQuery) => {
@@ -43,11 +43,13 @@ const App = () => {
         textArr.push(res.data.text)
       }
 
+      setText(textArr)
+
     } catch (error) {
       console.error('Error fetching search results:', error);
       setSearchResults([]);
     }
-    setIsLoading(false);
+    setIsLoading(falsee);
   };
   return (
     <div className="container">
