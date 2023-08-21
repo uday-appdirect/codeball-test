@@ -49,7 +49,7 @@ const App = () => {
       console.error('Error fetching search results:', error);
       setSearchResults([]);
     }
-    setIsLoading(false);
+    setIsLoading(falsee);
   };
   return (
     <div className="container">
