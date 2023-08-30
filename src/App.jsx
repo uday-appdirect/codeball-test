@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './styles.css';
+import { fetchHelper } from './utils';
 
 const App = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -10,26 +11,13 @@ const App = () => {
   const API_KEY = 'RHWM6PKOP4TFG4XM9MQHH6I6XJN7SE913UFDKZE613MDRRPSDVUHTFAQ2FRHNOXJX0B9TUSK79U1EE72'
 
   const getSearchResults = async (searchQuery) => {
-    let config = {
-      method: 'get',
-      maxBodyLength: Infinity,
-      url: `https://app.scrapingbee.com/api/v1/store/google?search=${searchQuery}&api_key=${API_KEY}&nb_results=10`,
-      headers: {}
-    };
-
-    const response = await axios.request(config);
-    return response;
+    const url = `https://app.scrapingbee.com/api/v1/store/google?search=${searchQuery}&api_key=${API_KEY}&nb_results=10`
+    return fetchHelper(url);
   }
 
   const getText = async (url) => {
-    let config = {
-      method: 'get',
-      maxBodyLength: Infinity,
-      url: `https://app.scrapingbee.com/api/v1/?url=${url}&render_js=false&extract_rules={"text": "body"}&api_key=${API_KEY}`,
-      headers: {}
-    };
-    const response = await axios.request(config)
-    return response;
+    const url2 = `https://app.scrapingbee.com/api/v1/?url=${url}&render_js=false&extract_rules={"text":"body"}&api_key=${API_KEY}`
+    return fetchHelper(url2);
   }
 
   const handleSearch = async () => {
