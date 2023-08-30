@@ -37,14 +37,16 @@ const App = () => {
     try {
       const response = await getSearchResults(searchQuery);
       setSearchResults(response.data);
-      let textArr = [];
+  
+      const textPromises = [];
       for (let i = 0; i < 5; i++) {
-        const res = await getText(response.data.organic_results[i].url)
-        textArr.push(res.data.text)
+        textPromises.push(getText(response.data.organic_results[i].url));
       }
-
-      setText(textArr)
-
+  
+      const textResponses = await Promise.all(textPromises);
+      const textArr = textResponses.map(res => res.data.text);
+      setText(textArr);
+  
     } catch (error) {
       console.error('Error fetching search results:', error);
       setSearchResults([]);
